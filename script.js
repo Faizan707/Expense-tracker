@@ -57,9 +57,8 @@ expensebtnsave.addEventListener('click', () => {
     reason.value = '';
 });
 
-// Display income list
 watchincome.addEventListener('click', () => {
-    incomeList.innerHTML = ''; // Clear the list
+    incomeList.innerHTML = '';
     incomeRecords.forEach((record, index) => {
         let listItem = document.createElement("li");
         listItem.classList.add("list-group-item", "d-flex", "justify-content-between", "align-items-center");
@@ -69,9 +68,8 @@ watchincome.addEventListener('click', () => {
     });
 });
 
-// Display expense list
 watchexpense.addEventListener('click', () => {
-    expenseList.innerHTML = ''; // Clear the list
+    expenseList.innerHTML = ''; 
     expenseRecords.forEach((record, index) => {
         let listItem = document.createElement("li");
         listItem.classList.add("list-group-item", "d-flex", "justify-content-between", "align-items-center");
@@ -81,16 +79,14 @@ watchexpense.addEventListener('click', () => {
     });
 });
 
-// Delete income record
 function deleteIncome(index) {
     incomeRecords.splice(index, 1);
     saveToLocalStorage("incomeRecords", incomeRecords);
-    watchincome.click(); // Refresh the list
+    watchincome.click(); 
 }
 
-// Delete expense record
 function deleteExpense(index) {
     expenseRecords.splice(index, 1);
     saveToLocalStorage("expenseRecords", expenseRecords);
-    watchexpense.click(); // Refresh the list
+    watchexpense.click(); 
 }
